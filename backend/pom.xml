@@ -50,7 +50,12 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.stabletechs</groupId>
+            <artifactId>autowire_2.11</artifactId>
+            <version>0.2.6</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
