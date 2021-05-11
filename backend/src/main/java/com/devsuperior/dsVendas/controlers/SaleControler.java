@@ -1,6 +1,8 @@
 package com.devsuperior.dsVendas.controlers;
 
 import com.devsuperior.dsVendas.dto.SaleDTO;
+import com.devsuperior.dsVendas.dto.SaleSuccessDTO;
+import com.devsuperior.dsVendas.dto.SaleSumDTO;
 import com.devsuperior.dsVendas.dto.SellerDTO;
 import com.devsuperior.dsVendas.service.SaleService;
 import com.devsuperior.dsVendas.service.SellerService;
@@ -26,7 +28,16 @@ public class SaleControler {
         Page<SaleDTO> list = service.findAll(pageable);
         return ResponseEntity.ok(list);
 
+    }
 
-
+    @GetMapping(value = "/amount-by-seller")
+    public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller() {
+        List<SaleSumDTO> list = service.amountGroupedBySeller();
+        return ResponseEntity.ok(list);
+    }
+    @GetMapping(value = "/success-by-seller")
+    public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller() {
+        List<SaleSuccessDTO> list = service.successGroupedBySeller();
+        return ResponseEntity.ok(list);
     }
 }
